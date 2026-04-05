@@ -1,0 +1,69 @@
+
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+{% endblock %} 
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+  <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+  <header>
+    <img src="{% static "blog/images/logo.jpg" %}" alt="Getachew - The Author Of This Blog" />
+    <h2>Get.TechAcad BLOG</h2>
+  </header>
+  <p>Hi, I am Getachew and I love to blog about tech and the world!</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Posts</h2>
+  <ul>
+    {% for post in posts %}
+      {% include "blog/includes/post.html" %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What We Do!</h2>
+  
+  <div class="about-content">
+    <p><strong>Welcome to Get.TechAcad – Master Tech. Build Skills. Shape the Future.</strong></p>
+    <p>
+      Founded by Getachew Zemicheal Hadgu, B.Sc. in Computer Science & Engineering (MIT, Mekelle), 
+      we empower learners worldwide with practical, job-ready tech skills from Tigray, Ethiopia.
+    </p>
+
+    <h3>🚀 What We Offer:</h3>
+    <ul class="offerings-list">
+      <li><strong>💻 Computer Essentials:</strong> Master basics to productivity tools.</li>
+      <li><strong>🔒 CyberGuard:</strong> Protect against hacks & digital threats.</li>
+      <li><strong>⚡ Tech Hacks:</strong> 60-second PC & mobile optimizations.</li>
+      <li><strong>🤖 AI Unlocked:</strong> Hands-on AI tools for daily use.</li>
+      <li><strong>📡 Tech Pulse:</strong> Weekly trend breakdowns.</li>
+      <li><strong>🎬 Tech Origins:</strong> Stories behind innovations.</li>
+    </ul>
+  </div>
+
+  <div id="social-links">
+    <a href="https://web.facebook.com/getachew.zemicheal" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/@Get.TechAcad" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</section>
+{% endblock %}
